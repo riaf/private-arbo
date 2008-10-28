@@ -16,8 +16,9 @@ class Mobile
 {
     /**
      * キャリアに適合する CarrierModel を返す
+     * @static
      */
-    public static function getCarrier($ua=null){
+    function getCarrier($ua=null){
         if(is_null($ua)) $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : getenv('HTTP_USER_AGENT');
         if(stripos($ua, 'docomo') !== false){
             return new Docomo();
